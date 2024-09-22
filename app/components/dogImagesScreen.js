@@ -1,4 +1,3 @@
-// RandomDog.js
 import React, { useEffect, useState } from 'react';
 import { View, Image, Button, ActivityIndicator, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
         elevation: 3,
     },
     buttonText: {
-        color: 'white', // Set text color to white
+        color: 'white',
         fontSize: 16,
         fontWeight: 'bold',
       },

@@ -4,29 +4,29 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BreedListScreen } from './components/breedListScreen'
 import { RandomDog } from "./components/dogImagesScreen";
 
-function HomeScreen({navigation}) {
+function HomeScreen({ navigation }) {
   return (
     <ImageBackground source={require('./assests/Image/DoggoPic.jpg')} style={styles.image}>
-        <View style={styles.buttonContainer} >
-          <TouchableOpacity style={styles.customButton} onPress={() => navigation.navigate('Second')}>
-            <Text style={styles.buttonText}>Doggo Breeds</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonContainer} >
+      <View style={styles.buttonContainer} >
+        <TouchableOpacity style={styles.customButton} onPress={() => navigation.navigate('Second')}>
+          <Text style={styles.buttonText}>Doggo Breeds</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.buttonContainer} >
         <TouchableOpacity style={styles.customButton} onPress={() => navigation.navigate('Third')}>
-            <Text style={styles.buttonText}>Doggo Pictures</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
+          <Text style={styles.buttonText}>Doggo Pictures</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
 
-function SecondScreen({navigation}) {
+function SecondScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.listContainerontainer}>
-        <BreedListScreen />
+      <BreedListScreen />
     </SafeAreaView>
-);
+  );
 };
 
 const Stack = createNativeStackNavigator();
@@ -37,12 +37,12 @@ export default function App() {
     <View style={styles.contanier}>
       <StatusBar hidden={false} barStyle="light-content" backgroundColor='#000000' />
       <NavigationContainer independent={true}>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Second" component={BreedListScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Third" component={RandomDog} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Second" component={BreedListScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Third" component={RandomDog} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
@@ -50,33 +50,27 @@ export default function App() {
 const styles = StyleSheet.create({
   image: {
     flex: 1,
-    //justifyContent: 'center',
-    //alignItems: 'center',
     resizeMode: 'cover',
-    //height: "100%",
-    //width: "100%",
-
   },
   contanier: {
     flex: 1,
   },
   button: {
-    backgroundColor: '#841584', // Button background color
-    //padding: 15,
+    backgroundColor: '#841584',
     marginBottom: 10,
     borderRadius: 10,
-    elevation: 3, // For Android shadow
+    elevation: 3,
   },
   buttonText: {
-    color: 'white', // Text color
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
   },
   buttonContainer: {
     marginTop: 50,
     width: '100%',
-    flexDirection: 'column', // Align children in a row
-    justifyContent: 'space-between', // Space buttons to the edges
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     paddingHorizontal: 32,
   },
   customButton: {
@@ -84,10 +78,10 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 10,
-    elevation: 3, // For Android shadow
+    elevation: 3,
   },
   buttonText: {
-    color: 'white', // Set text color to white
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
   },
