@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BreedListScreen } from './components/breedListScreen'
 import { RandomDog } from "./components/dogImagesScreen";
+import { Provider } from 'react-redux';
+import { store } from "./redux/store/store";
 
 function HomeScreen({ navigation }) {
   return (
@@ -36,13 +38,15 @@ export default function App() {
   return (
     <View style={styles.contanier}>
       <StatusBar hidden={false} barStyle="light-content" backgroundColor='#000000' />
-      <NavigationContainer independent={true}>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Second" component={BreedListScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Third" component={RandomDog} options={{ headerShown: false }} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer independent={true}>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Second" component={BreedListScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Third" component={RandomDog} options={{ headerShown: false }} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Provider>
     </View>
   );
 }
