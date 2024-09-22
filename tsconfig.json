@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/App.tsx", "app/redux/store.js", "app/redux/dogSlice.js", "app/components/breedListScreen.js"  ]
 }
